@@ -3,14 +3,16 @@
   "version": "1.0.0",
   "description": "Adebayo's Portfolio",
   "main": "index.js",
+  "homepage": "https://Baystef.github.io/My_Portfolio",
   "dependencies": {
     "gh-pages": "^1.2.0",
     "node-sass": "^4.9.2"
   },
   "devDependencies": {},
   "scripts": {
-    "sass": "node-sass -w scss/ -o portfolio/css/ --recursive"
+    "sass": "node-sass -w scss/ -o portfolio/css/ --recursive",
+    "deploy": "gh-pages -d portfolio"
   },
-  "author": "Adebayo",
-  "lcense": "ISC"
+  "author": "Debayo",
+  "license": "ISC"
 }
