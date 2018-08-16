@@ -1,0 +1,189 @@
+$primary-color: #16344d;
+$secondary-color: #ff957c;
+$home-image: url(../img/background.jpg);
+$background-opacity: 0.7;
+@mixin easeInOut {
+    transition: all 0.2s ease-in-out;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    line-height: 1.5;
+    color: set-text-color(yellow);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#bg-img {
+    background: $primary-color;
+    background: $home-image;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    z-index: 0;
+}
+
+// Headings
+h1,
+h2 {
+    margin: 0;
+    font-weight: 400;
+    &.greeting {
+        font-size: 6rem;
+    }
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.text-secondary {
+    color: $secondary-color;
+}
+
+// Body & Home page
+#welcome-section {
+    text-align: center;
+    height: 100vh;
+    overflow: hidden;
+    #intro {
+        font-size: 2rem;
+    }
+}
+
+// NavBar
+.nav-grid {
+    display: grid;
+    margin: 10px 30px 0 30px;
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    z-index: 50;
+}
+
+ul.navbar-nav {
+    text-align: center;
+    padding-right: 40px;
+    color: black;
+}
+
+.nav-item {
+    list-style: none;
+    display: inline;
+    margin: 20px;
+}
+
+.nav-link {
+    padding: 10px;
+    &:hover {
+        border-bottom: $secondary-color 3px solid;
+        @include easeInOut();
+    }
+}
+
+.current {
+    border-bottom: $secondary-color 3px solid;
+}
+
+// Social Icons
+.social-icons {
+    list-style: none;
+    text-align: right;
+    li {
+        display: inline-block;
+        margin-left: 10px;
+        a:hover {
+            color: $secondary-color;
+            @include easeInOut();
+        }
+    }
+}
+
+main {
+    min-height: calc(100vh - 60px);
+}
+
+// Project Page
+#project {
+    background: lighten($primary-color, 40);
+}
+
+.projects {
+    display: grid;
+    margin: 30px;
+    grid-template-columns: repeat(3, 400px);
+    grid-template-rows: 200px 200px;
+    grid-gap: 40px;
+}
+
+.project-tile {
+    box-shadow: 0 3px 3px black;
+    
+    img {
+        width: 100%;
+        border: $secondary-color 3px solid;
+        &:hover {
+            opacity: 0.5;
+            border-color: $secondary-color;
+            @include easeInOut();
+        }
+    }
+}
+
+
+#work {
+    overflow: hidden;
+    min-height: calc(100vh - 60px);
+
+    h1 {
+        text-align: center;
+    }
+}
+
+// Contact Page
+#contact {
+    background: lighten($primary-color, 40);
+    h1 {
+        text-align: center;
+    }
+}
+
+.contact-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem;
+    overflow: hidden;
+    div {
+        font-size: 2rem;
+        border: 3px #000 solid;
+        padding: 0.5rem 1.5rem;
+        margin-bottom: 1rem;
+        @include easeInOut();
+        &:hover {
+            background: $secondary-color;
+            padding: 0.25rem 0.75rem;
+            color: white;
+            cursor: pointer;
+            span {
+                color: black
+            }
+        }
+    }
+}
+
+// Footer
+footer {
+    text-align: center;
+    padding: 1rem;
+    color: lighten($color: $primary-color, $amount: 30);
+    background: darken($color: $primary-color, $amount: 10);
+    height: 60px;
+}

@@ -1,0 +1,16 @@
+{
+  "name": "my_portfolio",
+  "version": "1.0.0",
+  "description": "Adebayo's Portfolio",
+  "main": "index.js",
+  "dependencies": {
+    "gh-pages": "^1.2.0",
+    "node-sass": "^4.9.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "sass": "node-sass -w scss/ -o portfolio/css/ --recursive"
+  },
+  "author": "Adebayo",
+  "lcense": "ISC"
+}
