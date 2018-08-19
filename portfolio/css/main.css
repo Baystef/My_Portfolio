@@ -50,7 +50,9 @@ a {
 ul.navbar-nav {
   text-align: center;
   padding-right: 40px;
-  color: black; }
+  color: black;
+  display: flex;
+  justify-content: space-evenly; }
 
 .nav-item {
   list-style: none;
@@ -106,7 +108,8 @@ main {
     text-align: center; }
 
 #contact {
-  background: #5e9dd1; }
+  background: #5e9dd1;
+  overflow: hidden; }
   #contact h1 {
     text-align: center; }
 
@@ -115,8 +118,7 @@ main {
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
-  margin-top: 1rem;
-  overflow: hidden; }
+  margin-top: 1rem; }
   .contact-details div {
     font-size: 2rem;
     border: 3px #000 solid;
@@ -130,6 +132,14 @@ main {
       cursor: pointer; }
       .contact-details div:hover span {
         color: black; }
+
+@media screen and (max-width: 768px) {
+  .navbar-nav {
+    display: flex;
+    justify-content: space-evenly; }
+  #welcome-section {
+    text-align: left;
+    margin-left: 2rem; } }
 
 footer {
   text-align: center;

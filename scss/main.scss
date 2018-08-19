@@ -1,3 +1,5 @@
+@import "config";
+
 $primary-color: #16344d;
 $secondary-color: #ff957c;
 $home-image: url(../img/background.jpg);
@@ -5,6 +7,21 @@ $background-opacity: 0.7;
 @mixin easeInOut {
     transition: all 0.2s ease-in-out;
 }
+
+
+// Media Query Mixins
+@mixin mediaSm {
+    @media screen and (max-width: 500px) {
+        @content;
+    }
+}
+
+@mixin mediaMd {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
 
 *,
 *:before,
@@ -70,7 +87,10 @@ a {
 ul.navbar-nav {
     text-align: center;
     padding-right: 40px;
-    color: black;
+    color: black;    
+    display: flex;
+    justify-content: space-evenly;
+    
 }
 
 .nav-item {
@@ -149,6 +169,7 @@ main {
 // Contact Page
 #contact {
     background: lighten($primary-color, 40);
+    overflow: hidden;
     h1 {
         text-align: center;
     }
@@ -160,7 +181,7 @@ main {
     justify-content: space-evenly;
     align-items: center;
     margin-top: 1rem;
-    overflow: hidden;
+    
     div {
         font-size: 2rem;
         border: 3px #000 solid;
@@ -176,6 +197,19 @@ main {
                 color: black
             }
         }
+    }
+}
+
+
+//Media Queries
+@include mediaMd {
+    .navbar-nav {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    #welcome-section {
+        text-align: left;
+        margin-left: 2rem;
     }
 }
 
