@@ -10,13 +10,21 @@ body {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; }
 
 #bg-img {
-  background: #16344d;
   background: url(../img/background.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
   z-index: 0; }
+  #bg-img:after {
+    content: '';
+    background: rgba(22, 52, 77, 0.4);
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    position: absolute; }
 
 h1,
 h2 {
@@ -109,6 +117,7 @@ main {
 
 #contact {
   background: #5e9dd1;
+  min-height: calc(70vh + 60px);
   overflow: hidden; }
   #contact h1 {
     text-align: center; }
@@ -139,7 +148,9 @@ main {
     justify-content: space-evenly; }
   #welcome-section {
     text-align: left;
-    margin-left: 2rem; } }
+    margin-left: 2rem;
+    line-height: 1;
+    height: 75vh; } }
 
 footer {
   text-align: center;
