@@ -43,8 +43,7 @@ a {
 
 #welcome-section {
   text-align: center;
-  height: 100vh;
-  overflow: hidden; }
+  height: 100vh; }
   #welcome-section #intro {
     font-size: 2rem; }
 
