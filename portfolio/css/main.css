@@ -9,14 +9,14 @@ body {
   color: set-text-color(yellow);
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; }
 
-#bg-img {
+.bg-img {
   background: url(../img/background.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
   z-index: 0; }
-  #bg-img:after {
+  .bg-img:after {
     content: '';
     background: rgba(22, 52, 77, 0.4);
     top: 0;
@@ -85,9 +85,6 @@ ul.navbar-nav {
       color: #ff957c;
       transition: all 0.2s ease-in-out; }
 
-main {
-  min-height: calc(100vh - 60px); }
-
 #project {
   background: #5e9dd1; }
 
@@ -107,17 +104,14 @@ main {
       opacity: 0.5;
       border-color: #ff957c;
       transition: all 0.2s ease-in-out; }
+  .project-tile:hover {
+    box-shadow: 0 6px 6px black; }
 
-#work {
-  overflow: hidden;
-  min-height: calc(100vh - 60px); }
-  #work h1 {
-    text-align: center; }
+#work h1 {
+  text-align: center; }
 
 #contact {
-  background: #5e9dd1;
-  min-height: calc(70vh + 60px);
-  overflow: hidden; }
+  background: #5e9dd1; }
   #contact h1 {
     text-align: center; }
 
@@ -141,6 +135,9 @@ main {
       .contact-details div:hover span {
         color: black; }
 
+section#work, section#contact {
+  min-height: 500px; }
+
 @media screen and (max-width: 768px) {
   .navbar-nav {
     display: flex;
@@ -157,3 +154,5 @@ footer {
   color: #3884c4;
   background: #0b1925;
   height: 60px; }
+  footer > a {
+    color: inherit; }

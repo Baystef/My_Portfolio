@@ -36,7 +36,7 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-#bg-img {
+.bg-img {
     background: $home-image;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -86,6 +86,7 @@ a {
 }
 
 // NavBar
+
 .nav-grid {
     display: grid;
     margin: 10px 30px 0 30px;
@@ -135,9 +136,7 @@ ul.navbar-nav {
     }
 }
 
-main {
-    min-height: calc(100vh - 60px);
-}
+
 
 // Project Page
 #project {
@@ -164,13 +163,14 @@ main {
             @include easeInOut();
         }
     }
+    &:hover {
+        box-shadow: 0 6px 6px black;
+    }
 }
 
 
 #work {
-    overflow: hidden;
-    min-height: calc(100vh - 60px);
-
+  
     h1 {
         text-align: center;
     }
@@ -179,8 +179,6 @@ main {
 // Contact Page
 #contact {
     background: lighten($primary-color, 40);
-    min-height: calc(70vh + 60px);
-    overflow: hidden;
     h1 {
         text-align: center;
     }
@@ -205,10 +203,17 @@ main {
             color: white;
             cursor: pointer;
             span {
-                color: black
+                color: black;
             }
         }
     }
+}
+
+section {
+    &#work, &#contact  {
+        min-height: 500px; 
+    }
+    
 }
 
 
@@ -234,4 +239,8 @@ footer {
     color: lighten($color: $primary-color, $amount: 30);
     background: darken($color: $primary-color, $amount: 10);
     height: 60px;
+
+    &>a {
+        color: inherit;
+    }
 }
