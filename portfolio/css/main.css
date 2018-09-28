@@ -10,12 +10,20 @@ body {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; }
 
 .bg-img {
-  background: url(../img/background.jpg);
+  background: url(../img/Web-Dev.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  overflow: hidden;
-  z-index: 0; }
+  overflow: hidden; }
+  .bg-img::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    right: 0;
+    top: 0;
+    background: rgba(244, 244, 244, 0.79);
+    z-index: 1; }
 
 h1,
 h2 {
@@ -32,34 +40,39 @@ a {
 .text-secondary {
   color: #ff957c; }
 
-#welcome-section {
-  margin-top: 8rem;
-  text-align: center;
-  height: 100vh; }
-  #welcome-section #intro {
-    font-size: 2rem; }
-
 #navbar {
   background: white;
+  opacity: 0.7;
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
-  box-shadow: 0 2px 2px #16344d; }
+  box-shadow: 0 2px 2px #16344d;
+  z-index: 50; }
 
 .nav-grid {
   display: grid;
   padding: 10px 30px 0 30px;
   grid-gap: 10px;
-  grid-template-columns: repeat(3, 1fr);
-  z-index: 50; }
+  grid-template-columns: repeat(3, 1fr); }
+  .nav-grid .social-icons {
+    list-style: none;
+    text-align: right; }
+    .nav-grid .social-icons li {
+      display: inline-block;
+      margin-left: 10px; }
+      .nav-grid .social-icons li a:hover {
+        color: #ff957c;
+        transition: all 0.2s ease-in-out; }
 
 ul.navbar-nav {
   text-align: center;
   padding-right: 40px;
   color: black;
   display: flex;
-  justify-content: space-evenly; }
+  justify-content: space-evenly;
+  position: relative;
+  bottom: 10px; }
 
 .nav-item {
   list-style: none;
@@ -75,15 +88,26 @@ ul.navbar-nav {
 .current {
   border-bottom: #ff957c 3px solid; }
 
-.social-icons {
-  list-style: none;
-  text-align: right; }
-  .social-icons li {
-    display: inline-block;
-    margin-left: 10px; }
-    .social-icons li a:hover {
-      color: #ff957c;
-      transition: all 0.2s ease-in-out; }
+#welcome-section {
+  margin-top: 8rem;
+  text-align: center;
+  height: 100vh; }
+  #welcome-section #intro {
+    font-size: 2rem; }
+  #welcome-section .social-icons-sm {
+    list-style: none;
+    text-align: left;
+    display: none; }
+    #welcome-section .social-icons-sm li {
+      display: inline-block;
+      padding-top: 5px;
+      padding-right: 10px; }
+      #welcome-section .social-icons-sm li a:hover {
+        color: #ff957c;
+        transition: all 0.2s ease-in-out; }
+
+#work h1 {
+  text-align: center; }
 
 .projects {
   display: flex;
@@ -102,10 +126,8 @@ ul.navbar-nav {
       border-color: #ff957c;
       transition: all 0.2s ease-in-out; }
   .project-tile:hover {
-    box-shadow: 0 6px 6px black; }
-
-#work h1 {
-  text-align: center; }
+    box-shadow: 0 6px 6px black;
+    transition: all 0.2s ease-in-out; }
 
 #contact {
   background: #5e9dd1;
@@ -113,29 +135,47 @@ ul.navbar-nav {
   #contact h1 {
     text-align: center; }
 
-.contact-details {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin-top: 8rem;
-  margin-left: 2.5rem;
-  margin-right: 2.5rem; }
-  .contact-details div {
-    font-size: 2rem;
-    border: 3px #000 solid;
-    padding: 0.5rem 1.5rem;
-    margin-bottom: 1.5rem;
-    transition: all 0.2s ease-in-out; }
-    .contact-details div:hover {
-      background: #ff957c;
-      padding: 0.25rem 0.75rem;
-      color: white;
-      cursor: pointer; }
-      .contact-details div:hover span {
-        color: black; }
+.contact-details .container {
+  border-radius: 5px;
+  max-width: 600px;
+  padding: 20px;
+  margin: auto; }
+
+.contact-details input[type=text],
+.contact-details input[type=email],
+.contact-details textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ff957c;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical; }
+  .contact-details input[type=text]::placeholder,
+  .contact-details input[type=email]::placeholder,
+  .contact-details textarea::placeholder {
+    color: #888; }
+
+.contact-details input[type=submit] {
+  background: #16344d;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  margin: 0 auto;
+  cursor: pointer; }
+  .contact-details input[type=submit]:hover {
+    background-color: #214f75; }
 
 section#work, section#contact {
   min-height: 700px; }
+
+@media screen and (max-width: 500px) {
+  .social-icons {
+    display: none; }
+  .social-icons-sm {
+    display: block; } }
 
 @media screen and (max-width: 768px) {
   .navbar-nav {
@@ -143,9 +183,10 @@ section#work, section#contact {
     justify-content: space-evenly; }
   #welcome-section {
     text-align: left;
+    margin-top: 10rem;
     margin-left: 2rem;
-    line-height: 1;
-    height: 75vh; } }
+    line-height: 1.2;
+    height: 70vh; } }
 
 footer {
   text-align: center;

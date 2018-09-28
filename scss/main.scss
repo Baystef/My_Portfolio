@@ -2,8 +2,9 @@
 
 $primary-color: #16344d;
 $secondary-color: #ff957c;
-$home-image: url(../img/background.jpg);
-$background-opacity: 0.4;
+$home-image: url(../img/Web-Dev.jpg);
+$background-opacity: 0.7;
+
 @mixin easeInOut {
     transition: all 0.2s ease-in-out;
 }
@@ -23,12 +24,23 @@ body {
 }
 
 .bg-img {
-    background: $home-image;//#e4dddd;
+    background: $home-image; //#e4dddd;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
-    z-index: 0;
+
+
+    &::after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        right: 0;
+        top: 0;
+        background: rgba(244, 244, 244, 0.79);
+        z-index: 1;
+    }
 }
 
 // Headings
@@ -36,39 +48,34 @@ h1,
 h2 {
     margin: 0;
     font-weight: 400;
+
     &.greeting {
         font-size: 6rem;
     }
 
 }
 
+// All links
 a {
     color: black;
     text-decoration: none;
 }
 
+// Secondary Text
 .text-secondary {
     color: $secondary-color;
-}
-
-// Body & Home page
-#welcome-section {
-    margin-top: 8rem;
-    text-align: center;
-    height: 100vh;
-    #intro {
-        font-size: 2rem;
-    }
 }
 
 // NavBar
 #navbar {
     background: white;
+    opacity: $background-opacity;
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
     box-shadow: 0 2px 2px $primary-color;
+    z-index: 50;
 }
 
 .nav-grid {
@@ -76,15 +83,34 @@ a {
     padding: 10px 30px 0 30px;
     grid-gap: 10px;
     grid-template-columns: repeat(3, 1fr);
-    z-index: 50;
+
+
+    // Social Icons
+    .social-icons {
+        list-style: none;
+        text-align: right;
+
+        li {
+            display: inline-block;
+            margin-left: 10px;
+
+            a:hover {
+                color: $secondary-color;
+                @include easeInOut();
+            }
+        }
+    }
+
 }
 
 ul.navbar-nav {
     text-align: center;
     padding-right: 40px;
-    color: black;    
+    color: black;
     display: flex;
-    justify-content: space-evenly; 
+    justify-content: space-evenly;
+    position: relative;
+    bottom: 10px;
 }
 
 .nav-item {
@@ -95,6 +121,7 @@ ul.navbar-nav {
 
 .nav-link {
     padding: 10px;
+
     &:hover {
         border-bottom: $secondary-color 3px solid;
         @include easeInOut();
@@ -105,20 +132,43 @@ ul.navbar-nav {
     border-bottom: $secondary-color 3px solid;
 }
 
-// Social Icons
-.social-icons {
-    list-style: none;
-    text-align: right;
-    li {
-        display: inline-block;
-        margin-left: 10px;
-        a:hover {
-            color: $secondary-color;
-            @include easeInOut();
+
+// Body & Home page
+#welcome-section {
+    margin-top: 8rem;
+    text-align: center;
+    height: 100vh;
+
+
+    #intro {
+        font-size: 2rem;
+    }
+
+    .social-icons-sm {
+        list-style: none;
+        text-align: left;
+        display: none;
+
+        li {
+            display: inline-block;
+            padding-top: 5px;
+            padding-right: 10px;
+
+            a:hover {
+                color: $secondary-color;
+                @include easeInOut();
+            }
         }
     }
 }
 
+// Projects 
+#work {
+
+    h1 {
+        text-align: center;
+    }
+}
 
 .projects {
     // display: grid;
@@ -136,25 +186,21 @@ ul.navbar-nav {
     box-shadow: 0 1px 1px black;
     border: $secondary-color 3px solid;
     margin: 25px 0;
-    
+
     img {
         width: 100%;
+
+
         &:hover {
             opacity: 0.5;
             border-color: $secondary-color;
             @include easeInOut();
         }
     }
+
     &:hover {
         box-shadow: 0 6px 6px black;
-    }
-}
-
-
-#work {
-  
-    h1 {
-        text-align: center;
+        @include easeInOut();
     }
 }
 
@@ -162,7 +208,6 @@ ul.navbar-nav {
 #contact {
     background: lighten($primary-color, 40);
     width: 100%;
-    
 
     h1 {
         text-align: center;
@@ -170,51 +215,79 @@ ul.navbar-nav {
 }
 
 .contact-details {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    margin-top: 8rem;
-    margin-left: 2.5rem;
-    margin-right: 2.5rem;
-    
-    div {
-        font-size: 2rem;
-        border: 3px #000 solid;
-        padding: 0.5rem 1.5rem;
-        margin-bottom: 1.5rem;
-        @include easeInOut();
-        &:hover {
-            background: $secondary-color;
-            padding: 0.25rem 0.75rem;
-            color: white;
-            cursor: pointer;
-            span {
-                color: black;
-            }
+    .container {
+        border-radius: 5px;
+        max-width: 600px;
+        padding: 20px;
+        margin: auto;
+    }
+
+    input[type=text],
+    input[type=email],
+    textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid $secondary-color;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+
+        &::placeholder {
+            color: #888;
         }
     }
+
+    input[type=submit] {
+        background: $primary-color;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        margin: 0 auto;
+        cursor: pointer;
+
+        &:hover {
+            background-color: lighten($color: $primary-color, $amount: 10);
+        }
+    }
+
 }
 
 section {
-    &#work, &#contact  {
-        min-height: 700px; 
+
+    &#work, &#contact {
+        min-height: 700px;
     }
-    
+
 }
 
 
 //Media Queries
+@include mediaSm {
+    .social-icons {
+        display: none;
+    }
+
+    .social-icons-sm {
+        display: block;
+    }
+}
+
 @include mediaMd {
 
     .navbar-nav {
         display: flex;
         justify-content: space-evenly;
     }
+
     #welcome-section {
         text-align: left;
+        margin-top: 10rem;
         margin-left: 2rem;
-        line-height: 1;
-        height: 75vh;
+        line-height: 1.2;
+        height: 70vh;
     }
 }
 
