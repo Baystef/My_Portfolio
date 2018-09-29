@@ -29,18 +29,28 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
+    position: relative;
 
-
-    &::after {
-        content: '';
+    .section-overlay {
+        content: '.';
         position: absolute;
         height: 100%;
         width: 100%;
         right: 0;
         top: 0;
         background: rgba(244, 244, 244, 0.79);
-        z-index: 1;
+        z-index: 0;
     }
+    // &::after {
+    //     content: '';
+    //     position: absolute;
+    //     height: 100%;
+    //     width: 100%;
+    //     right: 0;
+    //     top: 0;
+    //     background: rgba(244, 244, 244, 0.79);
+    //     z-index: 0;
+    // }
 }
 
 // Headings
@@ -135,13 +145,19 @@ ul.navbar-nav {
 
 // Body & Home page
 #welcome-section {
-    margin-top: 8rem;
     text-align: center;
     height: 100vh;
 
+.welcome-section-text {
+    margin-top: 8rem;
+}
 
     #intro {
         font-size: 2rem;
+
+        .text-primary {
+            color: $primary-color;
+        }
     }
 
     .social-icons-sm {
@@ -215,10 +231,12 @@ ul.navbar-nav {
 }
 
 .contact-details {
+    margin-top: 1rem;
     .container {
         border-radius: 5px;
         max-width: 600px;
         padding: 20px;
+        
         margin: auto;
     }
 
@@ -257,12 +275,15 @@ ul.navbar-nav {
 
 section {
 
-    &#work, &#contact {
-        min-height: 700px;
+    &#work,
+    &#contact {
+        span.text-secondary {
+            border-bottom: $primary-color 3px solid;
+            padding: 0.5rem;
+        }
     }
 
 }
-
 
 //Media Queries
 @include mediaSm {
@@ -288,6 +309,10 @@ section {
         margin-left: 2rem;
         line-height: 1.2;
         height: 70vh;
+
+        .welcome-section-text {
+            margin-left: 2rem;
+        }
     }
 }
 
