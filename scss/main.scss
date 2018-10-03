@@ -9,6 +9,8 @@ $background-opacity: 0.8;
     transition: all 0.15s ease-out;
 }
 
+
+// Desktop Mode
 html {
     box-sizing: border-box;
 }
@@ -295,6 +297,7 @@ footer {
 
 
 //Media Queries
+// Mobile Device mode
 @include mediaSm {
 
 }
