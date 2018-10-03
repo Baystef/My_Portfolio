@@ -3,12 +3,15 @@
 $primary-color: #16344d;
 $secondary-color: #ff957c;
 $home-image: url(../img/Web-Dev.jpg);
-$background-opacity: 0.7;
+$background-opacity: 0.8;
 
-@mixin easeInOut {
-    transition: all 0.2s ease-in-out;
+@mixin easeOut {
+    transition: all 0.15s ease-out;
 }
 
+html {
+    box-sizing: border-box;
+}
 
 *,
 *:before,
@@ -17,9 +20,8 @@ $background-opacity: 0.7;
 }
 
 body {
-    margin: 0;
+    margin: 0 auto;
     line-height: 1.5;
-    color: set-text-color(yellow);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -39,18 +41,10 @@ body {
         right: 0;
         top: 0;
         background: rgba(244, 244, 244, 0.79);
+        //opacity: 0.9;
         z-index: 0;
     }
-    // &::after {
-    //     content: '';
-    //     position: absolute;
-    //     height: 100%;
-    //     width: 100%;
-    //     right: 0;
-    //     top: 0;
-    //     background: rgba(244, 244, 244, 0.79);
-    //     z-index: 0;
-    // }
+
 }
 
 // Headings
@@ -76,8 +70,8 @@ a {
     color: $secondary-color;
 }
 
-// NavBar
-#navbar {
+// Navigation Bar
+.navbar {
     background: white;
     opacity: $background-opacity;
     position: fixed;
@@ -86,56 +80,66 @@ a {
     left: 0;
     box-shadow: 0 2px 2px $primary-color;
     z-index: 50;
-}
-
-.nav-grid {
-    display: grid;
-    padding: 10px 30px 0 30px;
-    grid-gap: 10px;
-    grid-template-columns: repeat(3, 1fr);
-
-
-    // Social Icons
-    .social-icons {
-        list-style: none;
-        text-align: right;
-
-        li {
-            display: inline-block;
-            margin-left: 10px;
-
-            a:hover {
-                color: $secondary-color;
-                @include easeInOut();
-            }
-        }
-    }
-
-}
-
-ul.navbar-nav {
-    text-align: center;
-    padding-right: 40px;
-    color: black;
+    width: 100%;
+    padding-bottom: 0;
+    //height: 70px;
     display: flex;
-    justify-content: space-evenly;
-    position: relative;
-    bottom: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+// Social Icons
+.social-icons {
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: 10px;
+
+    //     list-style: none;
+    //     text-align: right;
+    a:hover {
+        color: $secondary-color;
+        @include easeOut();
+    }
+}
+
+//}
+
+.navbar-nav {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+    list-style-type: none;
+    justify-content: center;
+    // position: relative;
+    // bottom: 10px;
 }
 
 .nav-item {
-    list-style: none;
-    display: inline;
-    margin: 20px;
+    margin: 0;
 }
 
 .nav-link {
-    padding: 10px;
+    margin-left: 15px;
+    padding-bottom: 10px;
 
     &:hover {
         border-bottom: $secondary-color 3px solid;
-        @include easeInOut();
+        @include easeOut();
     }
+}
+
+.branding {
+    margin-top: 0;
+}
+
+.navbar-toggle {
+    display: none;
+}
+
+ .active {
+    display: flex;
+    flex-direction: column;
 }
 
 .current {
@@ -148,37 +152,21 @@ ul.navbar-nav {
     text-align: center;
     height: 100vh;
 
-.welcome-section-text {
-    margin-top: 8rem;
-}
+    .welcome-section-text {
+        margin-top: 6rem;
+    }
 
     #intro {
         font-size: 2rem;
 
         .text-primary {
-            color: $primary-color;
+            color: darken($primary-color, 10);
         }
     }
 
-    .social-icons-sm {
-        list-style: none;
-        text-align: left;
-        display: none;
-
-        li {
-            display: inline-block;
-            padding-top: 5px;
-            padding-right: 10px;
-
-            a:hover {
-                color: $secondary-color;
-                @include easeInOut();
-            }
-        }
-    }
 }
 
-// Projects 
+// Projects
 #work {
 
     h1 {
@@ -210,13 +198,13 @@ ul.navbar-nav {
         &:hover {
             opacity: 0.5;
             border-color: $secondary-color;
-            @include easeInOut();
+            @include easeOut();
         }
     }
 
     &:hover {
         box-shadow: 0 6px 6px black;
-        @include easeInOut();
+        @include easeOut();
     }
 }
 
@@ -230,13 +218,14 @@ ul.navbar-nav {
     }
 }
 
+// Contact Form
 .contact-details {
     margin-top: 1rem;
+
     .container {
         border-radius: 5px;
         max-width: 600px;
         padding: 20px;
-        
         margin: auto;
     }
 
@@ -244,13 +233,18 @@ ul.navbar-nav {
     input[type=email],
     textarea {
         width: 100%;
-        padding: 12px;
-        border: 1px solid $secondary-color;
+        padding: 14px;
+        border: none;
         border-radius: 4px;
         box-sizing: border-box;
         margin-top: 6px;
         margin-bottom: 16px;
         resize: vertical;
+
+        &:hover {
+            border: 2px solid $secondary-color;
+            @include easeOut();
+        }
 
         &::placeholder {
             color: #888;
@@ -273,47 +267,17 @@ ul.navbar-nav {
 
 }
 
+// Sections
 section {
 
     &#work,
     &#contact {
         span.text-secondary {
             border-bottom: $primary-color 3px solid;
-            padding: 0.5rem;
+            padding: 0.02rem;
         }
     }
 
-}
-
-//Media Queries
-@include mediaSm {
-    .social-icons {
-        display: none;
-    }
-
-    .social-icons-sm {
-        display: block;
-    }
-}
-
-@include mediaMd {
-
-    .navbar-nav {
-        display: flex;
-        justify-content: space-evenly;
-    }
-
-    #welcome-section {
-        text-align: left;
-        margin-top: 10rem;
-        margin-left: 2rem;
-        line-height: 1.2;
-        height: 70vh;
-
-        .welcome-section-text {
-            margin-left: 2rem;
-        }
-    }
 }
 
 // Footer
@@ -327,4 +291,77 @@ footer {
     &>a {
         color: inherit;
     }
+}
+
+
+//Media Queries
+@include mediaSm {
+
+}
+
+@include mediaMd {
+    .navbar {
+        font-size: 18px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        padding-bottom: 10px;
+    }
+
+    .navbar-nav {
+        padding-top: 15px;
+        display: none;
+     }
+
+    .nav-link {
+        text-decoration: none;
+    }
+
+    .navbar-nav li {
+        text-align: center;
+        margin: 15px auto;
+    }
+
+    .branding {
+        display: inline-block;
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+
+    .social-icons {
+        margin-right: 20px;
+        margin-top: auto;
+        padding: 10px;
+    }
+
+    .navbar-toggle {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        cursor: pointer;
+        color: rgba(0, 0, 0, 0.8);
+        font-size: 24px;
+        display: inline-block;
+    }
+
+     .active {
+         display: block;
+     }
+
+    footer {
+        font-size: 0.8rem;
+    }
+
+
+    #welcome-section {
+        text-align: left;
+        margin: auto;
+        line-height: 1.2;
+        height: 80vh;
+
+        .welcome-section-text {
+            margin-left: 2rem;
+        }
+
+    }
+
+   
 }

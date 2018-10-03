@@ -14,67 +14,68 @@
 <body>
 
     <!--Header & Navigation links-->
-    <nav id="navbar" class="nav-grid">
+    <nav class="navbar js-nav">
+        <span class="navbar-toggle" id="js-navbar-toggle">
+            <i class="fas fa-bars">☰ Menu</i>
+        </span>
         <div class="branding">
             <a href="index.html">
                 <img src="img/branding.png">
             </a>
         </div>
-        <ul class="navbar-nav">
+        <ul class="navbar-nav" id="js-menu">
             <li class="nav-item">
-                <a href="index.html" class="nav-link menu0 current">
+                <a href="#home" data-value="home" class="nav-link menu0 current">
                     Home
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#work" class="nav-link menu1">
+                <a href="#work" data-value="work" class="nav-link menu1">
                     Projects
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#contact" class="nav-link menu2">
+                <a href="#contact" data-value="contact" class="nav-link menu2">
                     Contact
                 </a>
             </li>
-        </ul>
 
-        <ul class="social-icons">
-            <li>
+            <li class="social-icons">
                 <a href="https://m.facebook.com/daramola.adebayo">
-                    <i class="fab fa-facebook fa-2x"></i>
+                    <i class="fab fa-facebook fa-2x">f</i>
                 </a>
             </li>
 
-            <li>
+            <li class="social-icons">
                 <a href="https://mobile.twitter.com/baystizzle">
-                    <i class="fab fa-twitter fa-2x"></i>
+                    <i class="fab fa-twitter fa-2x">t</i>
                 </a>
             </li>
 
-            <li>
+            <li class="social-icons">
                 <a href="https://github.com/Baystef">
-                    <i class="fab fa-github fa-2x"></i>
+                    <i class="fab fa-github fa-2x">g</i>
                 </a>
             </li>
 
-            <li>
+            <li class="social-icons">
                 <a href="https://www.linkedin.com/in/adebayo-daramola-31b852b3">
-                    <i class="fab fa-linkedin fa-2x"></i>
+                    <i class="fab fa-linkedin fa-2x">l</i>
                 </a>
             </li>
         </ul>
+
     </nav>
+
 
     <!--Welcome Section-->
     <main>
-        <div class="bg-img">
+        <div class="bg-img" id="home">
             <section id="welcome-section">
                 <div class="section-overlay">
                     <div class="welcome-section-text">
-                        <h1 class="greeting">
-                            <span class="text-secondary">
-                                Hello!
-                            </span>
+                        <h1 class="greeting text-secondary">
+                            Hello!
                         </h1>
 
                         <div id="intro">
@@ -84,31 +85,6 @@
                             <h2 class="text-secondary">Web & UI Designer</h2>
                         </div>
                     </div>
-                    <ul class="social-icons-sm">
-                        <li>
-                            <a href="https://m.facebook.com/daramola.adebayo">
-                                <i class="fab fa-facebook fa-2x"></i>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="https://mobile.twitter.com/baystizzle">
-                                <i class="fab fa-twitter fa-2x"></i>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="https://github.com/Baystef">
-                                <i class="fab fa-github fa-2x"></i>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="https://www.linkedin.com/in/adebayo-daramola-31b852b3">
-                                <i class="fab fa-linkedin fa-2x"></i>
-                            </a>
-                        </li>
-                    </ul>
                 </div>
             </section>
         </div>
@@ -178,8 +154,10 @@
     </footer>
 
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
+
+    <script src="js/jquery.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script> -->
     <script src="js/main.js"></script>
 
 </body>
