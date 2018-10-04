@@ -14,75 +14,80 @@
 <body>
 
     <!--Header & Navigation links-->
-    <nav id="navbar" class="nav-grid">
+    <nav class="navbar js-nav">
+        <span class="navbar-toggle" id="js-navbar-toggle">
+             <i class="fas fa-bars"></i> <!--☰ Menu -->
+        </span>
         <div class="branding">
             <a href="index.html">
                 <img src="img/branding.png">
             </a>
         </div>
-        <ul class="navbar-nav">
+        <ul class="navbar-nav" id="js-menu">
             <li class="nav-item">
-                <a href="index.html" class="nav-link menu0 current">
+                <a href="#home" data-value="home" class="nav-link menu0 current">
                     Home
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#work" class="nav-link menu1">
+                <a href="#work" data-value="work" class="nav-link menu1">
                     Projects
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#contact" class="nav-link menu2">
+                <a href="#contact" data-value="contact" class="nav-link menu2">
                     Contact
                 </a>
             </li>
-        </ul>
 
-        <ul class="social-icons">
-            <li>
+            <li class="social-icons">
                 <a href="https://m.facebook.com/daramola.adebayo">
                     <i class="fab fa-facebook fa-2x"></i>
                 </a>
             </li>
 
-            <li>
+            <li class="social-icons">
                 <a href="https://mobile.twitter.com/baystizzle">
                     <i class="fab fa-twitter fa-2x"></i>
                 </a>
             </li>
 
-            <li>
+            <li class="social-icons">
                 <a href="https://github.com/Baystef">
                     <i class="fab fa-github fa-2x"></i>
                 </a>
             </li>
 
-            <li>
+            <li class="social-icons">
                 <a href="https://www.linkedin.com/in/adebayo-daramola-31b852b3">
                     <i class="fab fa-linkedin fa-2x"></i>
                 </a>
             </li>
         </ul>
+
     </nav>
+
 
     <!--Welcome Section-->
     <main>
-        <div class="bg-img">
-        <section id="welcome-section">
-            <h1 class="greeting">
-                <span class="text-secondary">
-                    Hello!
-                </span>
-            </h1>
+        <div class="bg-img" id="home">
+            <section id="welcome-section">
+                <div class="section-overlay">
+                    <div class="welcome-section-text">
+                        <h1 class="greeting text-secondary">
+                            Hello!
+                        </h1>
 
-            <div id="intro">
-                <h2>My name is</h2>
-                <h2 class="text-secondary">Adebayo</h2>
-                <h2>I'm a</h2>
-                <h2 class="text-secondary">Web & UI Designer</h2>
-            </div>
-        </section>
-    </div>
+                        <div id="intro">
+                            <h2 class="text-primary">My name is</h2>
+                            <h2 class="text-secondary">Adebayo</h2>
+                            <h2 class="text-primary">I'm a</h2>
+                            <h2 class="text-secondary">Web & UI Designer</h2>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
 
         <!--Projects-->
         <section id="work">
@@ -129,17 +134,14 @@
                 </span>
             </h1>
             <div class="contact-details">
-                <div>
-                    <span class="text-secondary">Email:</span>
-                    daramola.adebayo@yahoo.com
-                </div>
-                <div>
-                    <span class="text-secondary">Phone:</span>
-                    +2347060771436
-                </div>
-                <div>
-                    <span class="text-secondary">Address:</span>
-                    Lagos, Nigeria
+                <div class="container">
+                    <form action="" method="post">
+                        <input type="text" id="name" name="name" placeholder="Your Name">
+                        <input type="email" name="email" id="email" placeholder="YourEmail@email.com">
+                        <textarea name="subject" id="subject" placeholder="Tell me something...">
+                    </textarea>
+                        <input type="submit" value="Send">
+                    </form>
                 </div>
             </div>
         </section>
@@ -148,10 +150,12 @@
     </main>
 
     <footer>
-        <a href="freecodecamp.org/baystef">Daramola Adebayo</a> &copy;2018 All Rights Reserved
+        <a href="freecodecamp.org/baystef" target="_blank">Daramola Adebayo</a> &copy;2018 All Rights Reserved
     </footer>
 
 
+
+    <script src="js/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
