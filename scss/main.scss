@@ -95,6 +95,10 @@ a {
     flex-direction: column;
     justify-content: flex-end;
     margin-left: 10px;
+    
+    
+    
+    
 
     //     list-style: none;
     //     text-align: right;
@@ -113,12 +117,15 @@ a {
     margin-right: 20px;
     list-style-type: none;
     justify-content: center;
+    flex: 1;
     // position: relative;
     // bottom: 10px;
 }
 
 .nav-item {
     margin: 0;
+    flex: 3;
+    
 }
 
 .nav-link {
@@ -133,15 +140,11 @@ a {
 
 .branding {
     margin-top: 0;
+    margin-left: 20px;
 }
 
 .navbar-toggle {
     display: none;
-}
-
- .active {
-    display: flex;
-    flex-direction: column;
 }
 
 .current {
@@ -298,13 +301,11 @@ footer {
 
 //Media Queries
 // Mobile Device mode
-@include mediaSm {
-
-}
+@include mediaSm {}
 
 @include mediaMd {
     .navbar {
-        font-size: 18px;
+        font-size: 16px;
         border: 1px solid rgba(0, 0, 0, 0.2);
         padding-bottom: 10px;
     }
@@ -312,27 +313,43 @@ footer {
     .navbar-nav {
         padding-top: 15px;
         display: none;
-     }
+    }
 
     .nav-link {
         text-decoration: none;
+
+        &:hover {
+            border-bottom: none;
+            color: $secondary-color;
+            @include easeOut();
+        }
     }
 
     .navbar-nav li {
         text-align: center;
-        margin: 15px auto;
+        margin: 10px auto;
+        margin-right: 10ch;
     }
 
     .branding {
         display: inline-block;
         margin-top: 10px;
         margin-left: 20px;
+        
+
+        img {
+            width: 40px;
+            height: 40px;
+        }
     }
 
     .social-icons {
-        margin-right: 20px;
         margin-top: auto;
         padding: 10px;
+
+        i {
+            font-size: 16px;
+        }
     }
 
     .navbar-toggle {
@@ -345,9 +362,14 @@ footer {
         display: inline-block;
     }
 
-     .active {
-         display: block;
-     }
+    .current {
+        border-bottom: none;
+        color: $secondary-color;
+    }
+
+    .active {
+        display: block;
+    }
 
     footer {
         font-size: 0.8rem;
@@ -366,5 +388,5 @@ footer {
 
     }
 
-   
+
 }
