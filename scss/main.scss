@@ -6,7 +6,7 @@ $home-image: url(../img/Web-Dev.jpg);
 $background-opacity: 0.8;
 
 @mixin easeOut {
-    transition: all 0.15s ease-out;
+    transition: all 0.2s ease-out;
 }
 
 
@@ -137,6 +137,8 @@ a {
         @include easeOut();
     }
 }
+
+
 
 .branding {
     margin-top: 0;
@@ -360,6 +362,43 @@ footer {
         color: rgba(0, 0, 0, 0.8);
         font-size: 24px;
         display: inline-block;
+    }
+
+    .menu-btn {
+        position: absolute;
+        z-index: 3;
+        right: 25px;
+        top: 25px;
+        cursor: pointer;
+        @include easeOut;
+    
+        .btn-line {
+            width: 28px;
+            height: 3px;
+            margin: 0 0 5px 0;
+            background: $primary-color;
+            @include easeOut;
+        }
+    
+        // Rotate Into X with Menu Lines
+        &.close {
+            transform: rotate(180deg);
+    
+            .btn-line {
+                //Line 1 - Rotate
+                &:nth-child(1) {
+                    transform: rotate(45deg) translate(5px, 5px);
+                }
+                //Line 2 - Hide
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+                //Line 3 - Rotate
+                &:nth-child(3) {
+                    transform: rotate(-45deg) translate(7px, -6px);
+                }
+            }
+        }
     }
 
     .current {
