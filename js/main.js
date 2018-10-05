@@ -30,7 +30,10 @@ $(document).ready(function() {
     })
 
     // Hamburger toggler
-    $('#js-navbar-toggle').on('click',function() {
-        $('#js-menu').toggleClass('active');
+    $('#js-navbar-toggle').on('click', function() {
+        $('#js-menu').slideToggle(500, function() {
+            $('#js-menu').toggleClass('active');
+        });
+        $('.menu-btn').toggleClass('close'); 
     });
 });

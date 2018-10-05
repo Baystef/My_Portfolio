@@ -64,7 +64,7 @@ a {
   margin-left: 10px; }
   .social-icons a:hover {
     color: #ff957c;
-    transition: all 0.15s ease-out; }
+    transition: all 0.2s ease-out; }
 
 .navbar-nav {
   text-align: center;
@@ -84,7 +84,7 @@ a {
   padding-bottom: 10px; }
   .nav-link:hover {
     border-bottom: #ff957c 3px solid;
-    transition: all 0.15s ease-out; }
+    transition: all 0.2s ease-out; }
 
 .branding {
   margin-top: 0;
@@ -124,10 +124,10 @@ a {
     .project-tile img:hover {
       opacity: 0.5;
       border-color: #ff957c;
-      transition: all 0.15s ease-out; }
+      transition: all 0.2s ease-out; }
   .project-tile:hover {
     box-shadow: 0 6px 6px black;
-    transition: all 0.15s ease-out; }
+    transition: all 0.2s ease-out; }
 
 #contact {
   background: #5e9dd1;
@@ -157,7 +157,7 @@ a {
     .contact-details input[type=email]:hover,
     .contact-details textarea:hover {
       border: 2px solid #ff957c;
-      transition: all 0.15s ease-out; }
+      transition: all 0.2s ease-out; }
     .contact-details input[type=text]::placeholder,
     .contact-details input[type=email]::placeholder,
     .contact-details textarea::placeholder {
@@ -199,7 +199,7 @@ footer {
     .nav-link:hover {
       border-bottom: none;
       color: #ff957c;
-      transition: all 0.15s ease-out; }
+      transition: all 0.2s ease-out; }
   .navbar-nav li {
     text-align: center;
     margin: 10px auto;
@@ -224,6 +224,27 @@ footer {
     color: rgba(0, 0, 0, 0.8);
     font-size: 24px;
     display: inline-block; }
+  .menu-btn {
+    position: absolute;
+    z-index: 3;
+    right: 25px;
+    top: 25px;
+    cursor: pointer;
+    transition: all 0.2s ease-out; }
+    .menu-btn .btn-line {
+      width: 28px;
+      height: 3px;
+      margin: 0 0 5px 0;
+      background: #16344d;
+      transition: all 0.2s ease-out; }
+    .menu-btn.close {
+      transform: rotate(180deg); }
+      .menu-btn.close .btn-line:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px); }
+      .menu-btn.close .btn-line:nth-child(2) {
+        opacity: 0; }
+      .menu-btn.close .btn-line:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px); }
   .current {
     border-bottom: none;
     color: #ff957c; }
