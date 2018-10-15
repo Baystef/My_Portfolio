@@ -58,13 +58,10 @@ a {
   align-items: center;
   justify-content: space-between; }
 
-.social-icons {
-  flex-direction: column;
-  justify-content: flex-end;
-  margin-left: 10px; }
-  .social-icons a:hover {
-    color: #ff957c;
-    transition: all 0.2s ease-out; }
+.branding {
+  margin-top: 0;
+  margin-left: 10px;
+  flex: 1; }
 
 .navbar-nav {
   text-align: center;
@@ -73,11 +70,13 @@ a {
   margin-right: 20px;
   list-style-type: none;
   justify-content: center;
-  flex: 1; }
+  flex: 8;
+  border: 1px solid red;
+  padding-left: 0px; }
 
 .nav-item {
   margin: 0;
-  flex: 3; }
+  padding-right: 10px; }
 
 .nav-link {
   margin-left: 15px;
@@ -86,9 +85,21 @@ a {
     border-bottom: #ff957c 3px solid;
     transition: all 0.2s ease-out; }
 
-.branding {
-  margin-top: 0;
-  margin-left: 20px; }
+.social-icons {
+  list-style-type: none;
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  border: 1px solid green;
+  padding-left: 0px; }
+
+.social-icon {
+  flex-direction: column;
+  padding-right: 10px;
+  list-style-type: none; }
+  .social-icon a:hover {
+    color: #ff957c;
+    transition: all 0.2s ease-out; }
 
 .navbar-toggle {
   display: none; }
@@ -193,7 +204,8 @@ footer {
     padding-bottom: 10px; }
   .navbar-nav {
     padding-top: 15px;
-    display: none; }
+    display: none;
+    list-style-type: none; }
   .nav-link {
     text-decoration: none; }
     .nav-link:hover {
@@ -202,8 +214,7 @@ footer {
       transition: all 0.2s ease-out; }
   .navbar-nav li {
     text-align: center;
-    margin: 10px auto;
-    margin-right: 10ch; }
+    margin: 10px auto; }
   .branding {
     display: inline-block;
     margin-top: 10px;
@@ -212,10 +223,13 @@ footer {
       width: 40px;
       height: 40px; }
   .social-icons {
+    display: none;
     margin-top: auto;
-    padding: 10px; }
-    .social-icons i {
-      font-size: 16px; }
+    padding: 10px;
+    justify-content: center;
+    text-align: center; }
+  .social-icon i {
+    font-size: 16px; }
   .navbar-toggle {
     position: absolute;
     top: 10px;
@@ -250,6 +264,8 @@ footer {
     color: #ff957c; }
   .active {
     display: block; }
+  .active-social {
+    display: inline-flex; }
   footer {
     font-size: 0.8rem; }
   #welcome-section {

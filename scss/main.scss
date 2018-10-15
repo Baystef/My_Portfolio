@@ -90,25 +90,12 @@ a {
     justify-content: space-between;
 }
 
-// Social Icons
-.social-icons {
-    flex-direction: column;
-    justify-content: flex-end;
+
+.branding {
+    margin-top: 0;
     margin-left: 10px;
-    
-    
-    
-    
-
-    //     list-style: none;
-    //     text-align: right;
-    a:hover {
-        color: $secondary-color;
-        @include easeOut();
-    }
+    flex: 1;
 }
-
-//}
 
 .navbar-nav {
     text-align: center;
@@ -117,15 +104,16 @@ a {
     margin-right: 20px;
     list-style-type: none;
     justify-content: center;
-    flex: 1;
+    flex: 8;
     // position: relative;
     // bottom: 10px;
+    border: 1px solid red;
+    padding-left: 0px;
 }
 
 .nav-item {
     margin: 0;
-    flex: 3;
-    
+    padding-right: 10px; 
 }
 
 .nav-link {
@@ -138,11 +126,25 @@ a {
     }
 }
 
+// Social Icons
+.social-icons {
+    list-style-type: none;
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    border: 1px solid green;
+    padding-left: 0px;
+}
 
-
-.branding {
-    margin-top: 0;
-    margin-left: 20px;
+.social-icon {
+    flex-direction: column;
+    padding-right: 10px;
+    list-style-type: none;
+ 
+    a:hover {
+        color: $secondary-color;
+        @include easeOut();
+    }
 }
 
 .navbar-toggle {
@@ -315,6 +317,7 @@ footer {
     .navbar-nav {
         padding-top: 15px;
         display: none;
+        list-style-type: none;
     }
 
     .nav-link {
@@ -330,7 +333,6 @@ footer {
     .navbar-nav li {
         text-align: center;
         margin: 10px auto;
-        margin-right: 10ch;
     }
 
     .branding {
@@ -346,9 +348,14 @@ footer {
     }
 
     .social-icons {
+        display: none;
         margin-top: auto;
         padding: 10px;
+        justify-content: center;
+        text-align: center;
+    }
 
+    .social-icon {
         i {
             font-size: 16px;
         }
@@ -410,6 +417,10 @@ footer {
         display: block;
     }
 
+    .active-social {
+        display: inline-flex;
+    }
+
     footer {
         font-size: 0.8rem;
     }
@@ -426,6 +437,5 @@ footer {
         }
 
     }
-
 
 }
