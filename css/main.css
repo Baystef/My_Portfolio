@@ -115,6 +115,9 @@ a {
     #welcome-section #intro .text-primary {
       color: #0b1925; }
 
+.icons {
+  display: none; }
+
 #work h1 {
   text-align: center; }
 
@@ -162,11 +165,6 @@ a {
     margin-top: 6px;
     margin-bottom: 16px;
     resize: vertical; }
-    .contact-details input[type=text]:hover,
-    .contact-details input[type=email]:hover,
-    .contact-details textarea:hover {
-      border: 2px solid #ff957c;
-      transition: all 0.2s ease-out; }
     .contact-details input[type=text]::placeholder,
     .contact-details input[type=email]::placeholder,
     .contact-details textarea::placeholder {
@@ -220,12 +218,18 @@ footer {
     .branding img {
       width: 40px;
       height: 40px; }
+  .icons {
+    display: block;
+    margin-top: 20px; }
+    .icons a {
+      padding-right: 15px;
+      color: #16344d; }
+    .icons a:hover {
+      color: #ff957c;
+      transition: all 0.2s ease-out; }
   .social-icons {
     display: none;
-    margin-top: auto;
-    padding: 10px;
-    justify-content: center;
-    text-align: center; }
+    padding: 10px; }
   .social-icon i {
     font-size: 16px; }
   .navbar-toggle {
@@ -262,8 +266,6 @@ footer {
     color: #ff957c; }
   .active {
     display: block; }
-  .active-social {
-    display: inline-flex; }
   footer {
     font-size: 0.8rem; }
   #welcome-section {
