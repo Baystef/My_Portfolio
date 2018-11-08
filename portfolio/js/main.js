@@ -33,7 +33,6 @@ $(document).ready(function() {
     $('#js-navbar-toggle').on('click', function() {
         $('#js-menu').slideToggle(500, function() {
             $('#js-menu').toggleClass('active');
-            $('#js-menu-2').toggleClass('active-social');
         });
         $('.menu-btn').toggleClass('close'); 
     });
