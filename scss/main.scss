@@ -24,7 +24,7 @@ html {
 body {
     margin: 0 auto;
     line-height: 1.5;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
 }
 
 .bg-img {
@@ -107,7 +107,6 @@ a {
     flex: 8;
     // position: relative;
     // bottom: 10px;
-
     padding-left: 0px;
 }
 
@@ -168,7 +167,7 @@ a {
         font-size: 2rem;
 
         .text-primary {
-            color: darken($primary-color, 10);
+            color: $primary-color;
         }
     }
 
@@ -222,7 +221,7 @@ a {
 
 // Contact Page
 #contact {
-    background: lighten($primary-color, 40);
+    background: lighten($primary-color, 30);
     width: 100%;
 
     h1 {
@@ -321,6 +320,7 @@ footer {
         padding-top: 15px;
         display: none;
         list-style-type: none;
+
     }
 
     .nav-link {
@@ -342,8 +342,8 @@ footer {
         display: inline-block;
         margin-top: 10px;
         margin-left: 20px;
+        margin-right: -60px;
         
-
         img {
             width: 40px;
             height: 40px;
@@ -357,10 +357,10 @@ footer {
         a {
             padding-right: 15px;
             color: $primary-color;
-        }
-        a:hover {
-            color: $secondary-color;
-            @include easeOut();
+            &:hover {
+                color: $secondary-color;
+                @include easeOut();
+            }
         }
     }
 

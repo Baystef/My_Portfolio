@@ -9,7 +9,7 @@ html {
 body {
   margin: 0 auto;
   line-height: 1.5;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; }
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; }
 
 .bg-img {
   background: url(../img/Web-Dev.jpg);
@@ -113,7 +113,7 @@ a {
   #welcome-section #intro {
     font-size: 2rem; }
     #welcome-section #intro .text-primary {
-      color: #0b1925; }
+      color: #16344d; }
 
 .icons {
   display: none; }
@@ -142,7 +142,7 @@ a {
     transition: all 0.2s ease-out; }
 
 #contact {
-  background: #5e9dd1;
+  background: #3884c4;
   width: 100%; }
   #contact h1 {
     text-align: center; }
@@ -214,7 +214,8 @@ footer {
   .branding {
     display: inline-block;
     margin-top: 10px;
-    margin-left: 20px; }
+    margin-left: 20px;
+    margin-right: -60px; }
     .branding img {
       width: 40px;
       height: 40px; }
@@ -224,9 +225,9 @@ footer {
     .icons a {
       padding-right: 15px;
       color: #16344d; }
-    .icons a:hover {
-      color: #ff957c;
-      transition: all 0.2s ease-out; }
+      .icons a:hover {
+        color: #ff957c;
+        transition: all 0.2s ease-out; }
   .social-icons {
     display: none;
     padding: 10px; }
