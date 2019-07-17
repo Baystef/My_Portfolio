@@ -6,7 +6,7 @@ $home-image: url(../img/Web-Dev.jpg);
 $background-opacity: 0.8;
 
 @mixin easeOut {
-    transition: all 0.2s ease-out;
+    transition: all 0.3s ease-out;
 }
 
 
@@ -24,7 +24,7 @@ html {
 body {
     margin: 0 auto;
     line-height: 1.5;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .bg-img {
@@ -84,7 +84,8 @@ a {
     z-index: 50;
     width: 100%;
     padding-bottom: 0;
-    //height: 70px;
+    margin-bottom: 70px;
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -112,7 +113,7 @@ a {
 
 .nav-item {
     margin: 0;
-    padding-right: 0.625rem; 
+    padding-right: 0.625rem;
 }
 
 .nav-link {
@@ -138,7 +139,7 @@ a {
     flex-direction: column;
     padding-right: 0.625rem;
     list-style-type: none;
- 
+
     a:hover {
         color: $secondary-color;
         @include easeOut();
@@ -201,9 +202,12 @@ a {
     box-shadow: 0 1px 1px black;
     border: $secondary-color 3px solid;
     margin: 1.5rem 0;
+    width: 25rem;
+    height: 12.5rem;
 
     img {
         width: 100%;
+        height: 100%;
 
 
         &:hover {
@@ -214,7 +218,7 @@ a {
     }
 
     &:hover {
-        box-shadow: 0 6px 6px black;
+        box-shadow: 0 3px 3px rgba(66, 66, 66, 0.96);
         @include easeOut();
     }
 }
@@ -250,7 +254,7 @@ a {
         box-sizing: border-box;
         margin-top: 0.375rem;
         margin-bottom: 1rem;
-        resize: vertical;
+        resize: none;
 
         // &:hover {
         //     border: 1px solid $secondary-color;
@@ -343,7 +347,7 @@ footer {
         margin-top: 0.625rem;
         margin-left: 1.25rem;
         margin-right: -3.75rem;
-        
+
         img {
             width: 40px;
             height: 40px;
@@ -357,6 +361,7 @@ footer {
         a {
             padding-right: 0.9rem;
             color: $primary-color;
+
             &:hover {
                 color: $secondary-color;
                 @include easeOut();
@@ -392,7 +397,7 @@ footer {
         top: 25px;
         cursor: pointer;
         @include easeOut;
-    
+
         .btn-line {
             width: 28px;
             height: 3px;
@@ -400,20 +405,23 @@ footer {
             background: $primary-color;
             @include easeOut;
         }
-    
+
         // Rotate Into X with Menu Lines
         &.close {
             transform: rotate(180deg);
-    
+
             .btn-line {
+
                 //Line 1 - Rotate
                 &:nth-child(1) {
                     transform: rotate(45deg) translate(5px, 5px);
                 }
+
                 //Line 2 - Hide
                 &:nth-child(2) {
                     opacity: 0;
                 }
+
                 //Line 3 - Rotate
                 &:nth-child(3) {
                     transform: rotate(-45deg) translate(7px, -6px);
