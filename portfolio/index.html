@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" type="image/png" sizes="32x32" href="img/icon.png">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+        integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
     <title>Adebayo's Portfolio</title>
 </head>
@@ -122,8 +122,8 @@
 
             <div class="projects">
                 <div class="project-tile">
-                    <a href="https://yuhost.netlify.com">
-                        <img src="img/projects/project1.jpg" alt="project 1">
+                    <a href="https://multiliving.netlify.app">
+                        <img src="img/projects/project1.png" alt="project 1">
                     </a>
                 </div>
                 <div class="project-tile">
@@ -137,19 +137,19 @@
                     </a>
                 </div>
                 <div class="project-tile">
-                        <a href="https://baystef.github.io/Quick-Credit/UI">
-                            <img src="img/projects/project4.jpg" alt="project 4">
-                        </a>
-                </div>
-                <div class="project-tile">
-                    <a href="https://fylo-2.netlify.com">
-                        <img src="img/projects/project5.jpg" alt="project 5">
+                    <a href="https://baystef.github.io/Quick-Credit/UI">
+                        <img src="img/projects/project4.jpg" alt="project 4">
                     </a>
                 </div>
                 <div class="project-tile">
-                        <a href="https://fylo-3.netlify.com">
-                            <img src="img/projects/project6.jpg" alt="project 6">
-                        </a>
+                    <a href="https://facebrain-ui.herokuapp.com/">
+                        <img src="img/projects/project5.png" alt="project 5">
+                    </a>
+                </div>
+                <div class="project-tile">
+                    <a href="https://fylo-3.netlify.com">
+                        <img src="img/projects/project6.jpg" alt="project 6">
+                    </a>
                 </div>
             </div>
         </section>
@@ -166,7 +166,7 @@
                     <form action="mailto:daramola.adebayo@yahoo.com" method="post">
                         <input type="text" id="name" name="name" placeholder="Your Name">
                         <input type="email" name="email" id="email" placeholder="YourEmail@email.com">
-                        <textarea name="subject" id="subject" placeholder="Tell me something...">
+                        <textarea name="subject" id="subject" placeholder="Talk To Me...">
                     </textarea>
                         <input type="submit" value="Send">
                     </form>
@@ -178,16 +178,21 @@
     </main>
 
     <footer>
-        <a href="https://www.freecodecamp.org/baystef" target="_blank">Daramola Adebayo</a> &copy;2018 All Rights
+        <a href="https://www.freecodecamp.org/baystef" target="_blank">Daramola Adebayo</a> &copy;<span
+            class="year"></span> All Rights
         Reserved
     </footer>
 
 
 
     <script src="js/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
+    <script>
+        const dt = new Date();
+        document.querySelector(".year").innerText = dt.getFullYear();
+    </script>
 
 </body>
 
