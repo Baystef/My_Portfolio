@@ -6,13 +6,14 @@ $home-image: url(../img/Web-Dev.jpg);
 $background-opacity: 0.8;
 
 @mixin easeOut {
-    transition: all 0.3s ease-out;
+    transition: all 0.2s ease;
 }
 
 
 // Desktop Mode
 html {
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 *,
@@ -95,17 +96,14 @@ a {
 .branding {
     margin-top: 0;
     margin-left: 0.625rem;
-    flex: 1;
 }
 
 .navbar-nav {
     text-align: center;
     display: flex;
-    flex-direction: row;
     margin-right: 1.25rem;
     list-style-type: none;
     justify-content: center;
-    flex: 8;
     // position: relative;
     // bottom: 10px;
     padding-left: 0px;
@@ -130,7 +128,6 @@ a {
 .social-icons {
     list-style-type: none;
     display: flex;
-    flex: 1;
     justify-content: flex-end;
     padding-left: 0px;
 }
@@ -161,7 +158,12 @@ a {
     height: 100vh;
 
     .welcome-section-text {
-        margin-top: 6rem;
+        // margin-top: 6rem;
+        display: flex;
+        place-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
     }
 
     #intro {
@@ -322,9 +324,14 @@ footer {
 
     .navbar-nav {
         padding-top: 0.9rem;
+        margin-top: 12rem;
+        margin-right: 0;
         display: none;
         list-style-type: none;
-
+        align-self: center;
+        background: white;
+        opacity: 0.8;
+        width: 100%;
     }
 
     .nav-link {
@@ -436,7 +443,7 @@ footer {
     }
 
     .active {
-        display: block;
+        flex-direction: column;
     }
 
     footer {
@@ -448,10 +455,12 @@ footer {
         text-align: left;
         margin: auto;
         line-height: 1.2;
-        height: 80vh;
+        height: 90vh;
+        font-size: 70%;
 
         .welcome-section-text {
             margin-left: 2rem;
+            justify-content: flex-start;
         }
 
     }

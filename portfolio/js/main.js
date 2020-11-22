@@ -22,16 +22,10 @@ $(document).ready(function() {
     });
 
     //$('.bg-img').height($(window).height());
-    // Scroll Effect
-    $('.navbar a').click(function() {
-        $('body,html').animate({
-            scrollTop:$('#' + $(this).data('value')).offset().top
-        }, 1000)
-    })
 
     // Hamburger toggler
     $('#js-navbar-toggle').on('click', function() {
-        $('#js-menu').slideToggle(500, function() {
+        $('#js-menu').slideToggle(250, function() {
             $('#js-menu').toggleClass('active');
         });
         $('.menu-btn').toggleClass('close'); 
