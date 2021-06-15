@@ -121,8 +121,10 @@ a {
 .icons {
   display: none; }
 
-#work h1 {
-  text-align: center; }
+#work {
+  scroll-margin-top: 4.5rem; }
+  #work h1 {
+    text-align: center; }
 
 .projects {
   display: flex;
