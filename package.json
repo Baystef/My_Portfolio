@@ -6,7 +6,7 @@
   "homepage": "https://Baystef.github.io/My_Portfolio",
   "dependencies": {
     "gh-pages": "^1.2.0",
-    "node-sass": "^6.0.0"
+    "node-sass": "^7.0.0"
   },
   "devDependencies": {},
   "scripts": {
